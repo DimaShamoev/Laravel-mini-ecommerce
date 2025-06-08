@@ -26,4 +26,20 @@ class CategoryController extends Controller {
 
     }
 
+    public function showCategoryForm($categoryId) {
+        $category = Category::find($categoryId);
+        return view('edit_forms.edit_category', compact('category'));
+    }
+
+    public function editCategory(Request $request, $categoryId) {
+        $category = Category::find($categoryId);
+
+        if ($category) {    
+            $category->name = $request->name;
+            $category->description = $request->description;
+            $category->save();
+        }
+        return redirect('/');
+    }
+
 }

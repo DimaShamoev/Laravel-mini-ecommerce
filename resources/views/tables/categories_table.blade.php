@@ -22,7 +22,9 @@
             <td>
                 <a href="{{ route('delete_category', $category->id) }}">Delete</a>
             </td>
-            <td>Edit</td>
+            <td>
+                <a href="{{ route('edit_category_page', $category->id) }}">Edit</a>
+            </td>
         </tr>
         @endforeach
     </table>

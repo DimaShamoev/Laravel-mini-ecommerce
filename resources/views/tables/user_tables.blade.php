@@ -22,7 +22,9 @@
             <td>
                 <a href="{{ route('delete_user', $user->id) }}">Delete</a>
             </td>
-            <td>Edit</td>
+            <td>
+                <a href="{{ route('edit_user_page', $user->id) }}">Edit</a>
+            </td>
         </tr>
         @endforeach
     </table>

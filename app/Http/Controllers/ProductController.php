@@ -27,4 +27,24 @@ class ProductController extends Controller {
         return redirect('/');
     }
 
+    public function showProductEditForm($productId) {
+        $product = Product::find($productId);
+        return view('edit_forms.edit_product', compact('product'));
+    }
+
+    public function editProduct(Request $request, $productId) {
+        $product = Product::findOrFail($productId);
+
+        if ($product) {
+            $product->name = $request->name;
+            $product->description = $request->desc;
+            $product->price = $request->price;
+            $product->stock = $request->stock;
+            $product->category_id = $request->category_id ?? null;
+            $product->save();
+        }
+        
+        return redirect('/');
+    }
+
 }
