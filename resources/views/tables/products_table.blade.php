@@ -12,6 +12,7 @@
             <th>Product Price</th>
             <th>Product Stock</th>
             <th>Created At</th>
+            <th>Add To Order</th>
             <th>Delete</th>
             <th>Edit</th>
         </tr>
@@ -23,6 +24,12 @@
             <td>{{ $product->price }}</td>
             <td>{{ $product->stock }}</td>
             <td>{{ $product->created_at }}</td>
+            <td>
+                <form action="{{ route('create_order') }}" method="post">
+                    @csrf
+                    <button>Add To Cart</button>
+                </form>
+            </td>
             <td>
                 <a href="{{ route('delete_product', $product->id) }}">Delete</a>
             </td>

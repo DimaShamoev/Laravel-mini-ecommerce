@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -35,6 +36,13 @@ class PageController extends Controller {
 
     public function showOrdersPage() {
         return view('orders');
+    }
+
+    public function showOrderPage() {
+
+        $orders = Order::all();
+
+        return view('orders', ['orders' => $orders]);
     }
 
 }
