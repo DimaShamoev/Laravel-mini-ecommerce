@@ -16,4 +16,12 @@ class UserController extends Controller {
         $user->save();
         return redirect('/');
     }
+
+    public function deleteUser($userId) {
+        $user = User::find($userId);
+
+        if ($user) $user->delete();
+
+        return redirect('/');
+    }
 }

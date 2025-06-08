@@ -1,7 +1,7 @@
 <div class="table-wrapper"> 
     <div class="table-title">
         <h2>
-            Products Table
+            Categories Table
         </h2>
     </div>   
     <table class="table">
@@ -19,7 +19,9 @@
             <td>{{ $category->name }}</td>
             <td>{{ $category->description }}</td>
             <td>{{ $category->created_at }}</td>
-            <td>Delete</td>
+            <td>
+                <a href="{{ route('delete_category', $category->id) }}">Delete</a>
+            </td>
             <td>Edit</td>
         </tr>
         @endforeach

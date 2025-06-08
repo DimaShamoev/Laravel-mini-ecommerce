@@ -17,4 +17,13 @@ class CategoryController extends Controller {
 
     }
 
+    public function deleteCategory($categoryId) {
+        $category = Category::find($categoryId);
+
+        if ($category) $category->delete();
+
+        return redirect('/');
+
+    }
+
 }

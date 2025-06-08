@@ -19,7 +19,9 @@
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
             <td>{{ $user->created_at }}</td>
-            <td>Delete</td>
+            <td>
+                <a href="{{ route('delete_user', $user->id) }}">Delete</a>
+            </td>
             <td>Edit</td>
         </tr>
         @endforeach

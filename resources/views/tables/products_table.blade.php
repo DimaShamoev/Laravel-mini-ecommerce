@@ -23,7 +23,9 @@
             <td>{{ $product->price }}</td>
             <td>{{ $product->stock }}</td>
             <td>{{ $product->created_at }}</td>
-            <td>Delete</td>
+            <td>
+                <a href="{{ route('delete_product', $product->id) }}">Delete</a>
+            </td>
             <td>Edit</td>
         </tr>
         @endforeach

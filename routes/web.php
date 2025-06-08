@@ -15,3 +15,7 @@ Route::get('/orders', [PageController::class, 'showOrdersPage'])->name('orders')
 Route::post('/create/user', [UserController::class, 'createUser'])->name('create_user');
 Route::post('/create/product', [ProductController::class, 'createProduct'])->name('create_product');
 Route::post('/create/category', [CategoryController::class, 'createCategory'])->name('create_category');
+
+Route::get('/delete/user/{id}', [UserController::class, 'deleteUser'])->name('delete_user');
+Route::get('/delete/product/{id}', [ProductController::class, 'deleteProduct'])->name('delete_product');
+Route::get('delete/category/{id}', [CategoryController::class, 'deleteCategory'])->name('delete_category');

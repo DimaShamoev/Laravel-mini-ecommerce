@@ -29,7 +29,7 @@
                 <input type="text" placeholder="Description" name="description">
             </div>
             <div class="submit-btn">
-                <button type="submit">Create User</button>
+                <button type="submit">Create Category</button>
             </div>
         </form>
     </main> {{-- main --}}

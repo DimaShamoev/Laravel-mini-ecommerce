@@ -19,4 +19,12 @@ class ProductController extends Controller {
         return redirect('/');
     }
 
+    public function deleteProduct($productId) {
+        $product = Product::find($productId);
+
+        if ($product) $product->delete();
+
+        return redirect('/');
+    }
+
 }
